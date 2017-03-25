@@ -58,7 +58,7 @@ function getCart(){
         items++;
         var data = responseData[i];
         if(data.title!=undefined){
-        var item = createItemHtml(data['title'], data['image'], data['category'], data['pay']+'/'+data['price'], 50, data['no']);
+        var item = createItemHtml(data['title'], data['image'], data['category'], data['pay']+'/'+data['price'], data['per'], data['no']);
         $('#portfoliolist').append(item);
         }
       }
@@ -66,9 +66,9 @@ function getCart(){
       if(items>0){
         $('#not-have').hide();
       }
+      filterList.init();
     }
   });
-  filterList.init();
 }
 
 function createItemHtml(title, image, category, price, percent, no){
