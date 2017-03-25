@@ -40,27 +40,27 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <script type="text/javascript" src="js/hover_pack.js"></script>
     <link rel="stylesheet" href="css/etalage.css">
     <script src="js/jquery.etalage.min.js"></script>
-    <script>
-      jQuery(document).ready(function($){
+<script>
+jQuery(document).ready(function($){
 
-        $('#etalage').etalage({
-          thumb_image_width: 300,
-          thumb_image_height: 400,
-          source_image_width: 800,
-          source_image_height: 1000,
-          show_hint: true,
-          click_callback: function(image_anchor, instance_id){
-            
+    $('#etalage').etalage({
+    thumb_image_width: 300,
+        thumb_image_height: 400,
+        source_image_width: 800,
+        source_image_height: 1000,
+        show_hint: true,
+        click_callback: function(image_anchor, instance_id){
+
           }
         });
 
       });
     </script>
-    <script type="text/javascript">
-      jQuery(document).ready(function($) {
-        $(".scroll").click(function(event){
-          event.preventDefault();
-          $('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+    $(".scroll").click(function(event){
+        event.preventDefault();
+        $('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
         });
       });
     </script>
@@ -90,9 +90,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <!-- search-scripts -->
             <script src="js/classie.js"></script>
             <script src="js/uisearch.js"></script>
-              <script>
-                new UISearch( document.getElementById( 'sb-search' ) );
-              </script>
+<script>
+new UISearch( document.getElementById( 'sb-search' ) );
+</script>
             <!-- //search-scripts -->
 
             <a href="cart.php"><i class="cart"></i></a>
@@ -107,6 +107,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
             <li class="active"><a href="/nh/NHFintech">Home</a></li>
                 <li class="active"><a href="/nh/NHFintech">공동 구매</a></li>
+<li class="active"><a href="/nh/NHFintech/contact.html">공구 등록</a></li>
             </ul>
       </div>
      </div>
@@ -165,7 +166,7 @@ while($stmt2->fetch())
 {
     echo "<p class=\"prod-desc\"><span style=\"font-size:18px;paddinng 10px; border-right:1px solid #9e9e9e;\">".$user."&ensp;</span>&ensp;".$content."</p>";
 }
-            ?>
+?>
             </div>
             <br>
             <div class="single-bottom2">
