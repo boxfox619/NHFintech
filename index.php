@@ -115,7 +115,7 @@ jQuery(document).ready(function($) {
 <script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
 <script type="text/javascript">
 $(function () {
-    seeMore('*');
+    seeMore('*','<?php echo $_GET["search"]; ?>');
     });
     </script>
                 </div>
