@@ -70,7 +70,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 					<li class="active"><a href="/nh/NHFintech">Home</a></li>
 							<li class="active"><a href="/nh/NHFintech">공동 구매</a></li>
-							<li class="active"><a href="index.html">개인 설정</a></li>
           </ul>
 		</div>
 	 </div>
@@ -100,7 +99,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="clearfix"></div>
 				</div>
 		  <div class="clearfix"></div>
-				<div class="seemore" style="text-align: center !important;" onclick="seeMore('*');">
+          <div class="seemore" style="text-align: center !important;" onclick="seeMore('*',"<?php echo $_GET["search"]; ?>");">
 					<a>See More</a>
 				</div>
 		  </div>
@@ -118,7 +117,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
 	<script type="text/javascript">
 	$(function () {
-		seeMore('*');
+        seeMore('*',"<?php echo $_GET["search"]; ?>");
 	});
 	</script>
 				</div>

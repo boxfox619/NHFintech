@@ -24,7 +24,7 @@ var filterList = {
 };
 
 var items = 0;
-function seeMore(category){
+function seeMore(category,filter=""){
 var params = 'begin='+items+'&count=10&category='+category;
   $.ajax({
   type: "POST",
@@ -39,6 +39,8 @@ var params = 'begin='+items+'&count=10&category='+category;
                   var per = 0;
               else
                   var per = data['per'];
+              if(data['title'].indexOf(filter) == -1)
+                  continue;
         var item = createItemHtml(data['title'], data['image'], data['category'], data['price'], per, data['no']);
         $('#portfoliolist').append(item);
         }
