@@ -19,7 +19,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Pakhi an E-Commerce online Shopping Category Flat Bootstarp responsive Website Template| Single :: w3layouts</title>
+    <title>1로 모여</title>
     <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery.min.js"></script>
@@ -40,6 +40,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <script type="text/javascript" src="js/hover_pack.js"></script>
     <link rel="stylesheet" href="css/etalage.css">
     <script src="js/jquery.etalage.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyD7hcJujCxaI72Hk5Sk5JaYtuwZGql-u7o",
+    authDomain: "come-to-1.firebaseapp.com",
+    databaseURL: "https://come-to-1.firebaseio.com",
+    storageBucket: "come-to-1.appspot.com",
+    messagingSenderId: "995092706843"
+  };
+  firebase.initializeApp(config);
+</script>
+
 <script>
 jQuery(document).ready(function($){
 
@@ -107,7 +121,7 @@ new UISearch( document.getElementById( 'sb-search' ) );
 
             <li class="active"><a href="/nh/NHFintech">Home</a></li>
                 <li class="active"><a href="/nh/NHFintech">공동 구매</a></li>
-<li class="active"><a href="/nh/NHFintech/contact.html">공구 등록</a></li>
+                <li class="active"><a href="/nh/NHFintech/contact.html">공구 등록</a></li>
             </ul>
       </div>
      </div>
