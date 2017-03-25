@@ -40,11 +40,12 @@ function complete(no, percent){
     if(result){
       $.ajax({
       type: "POST",
-      url: '/nh/NHFintech/Confirm.php',
+      url: '/nh/Confirm.php',
       data: 'post_pid='+no,
       success: function(responseData){
         location.reload();
-      });
-    }
+      };
+    });
+  }
   }
 }
