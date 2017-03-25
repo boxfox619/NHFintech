@@ -52,6 +52,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     messagingSenderId: "995092706843"
   };
   firebase.initializeApp(config);
+  var database = firebase.database();
 </script>
 
 <script>
@@ -148,6 +149,14 @@ new UISearch( document.getElementById( 'sb-search' ) );
               </ul>
               <div class="clearfix"></div>
             </div>
+
+
+            <div class="container">
+              <div class="coats text-center">
+                <div id="map" style="width:100%;height:300px;"></div>
+              </div>
+            </div>
+
             <div class="desc1 span_3_of_2"; style="position:absolute; bottom:0px; right:0px;">
             <h3><?php echo $title; ?></h3>
             <p>$ <?php echo $price; ?> <a>/<?php echo $item_count; ?></a></p>
@@ -192,11 +201,6 @@ while($stmt2->fetch())
                   <input style="width:100%; height: 50px;" type="text" name="content">
                 </h6>
               </form>
-            </div>
-          </div>
-          <div class="container">
-            <div class="coats text-center">
-              <div id="map" style="width:100%;height:500px;"></div>
             </div>
           </div>
     </div></div></div>
