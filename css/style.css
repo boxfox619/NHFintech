@@ -4,11 +4,15 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
+@font-face {
+	font-family: 'dohyeon';
+	src: url(BMDOHYEON_ttf.ttf) format('truetype');
+}
 body{
 	padding:0;
 	margin:0;
-	font-family: 'Lato', sans-serif;
 	background:#fff;
+		font-family: dohyeon !important;
 }
 body a{
     transition:0.5s all;
@@ -385,6 +389,7 @@ i.shipping {
 	-ms-border-radius: 50px;
 	background:#cdcfd2;
 	margin-right:10px;
+	margin-bottom: -0.5px;
 }
 #filters li label.active {
 	background:#ecf0f1;
@@ -664,10 +669,8 @@ i.shipping {
 	width:40%;
 	margin:2em auto 1em;
 }
-.seemore {
-	float:left;
-}
 .seemore a {
+	cursor: pointer;
 	background:#ff7180;
 	padding:0.55em 1.5em;
 	color:#fff;
@@ -2751,6 +2754,8 @@ li.selector {
 
 /* Tablet */
 @media screen and (max-width: 768px) {
+
+
 	.services_nav_list {
 		display: none;
 	}
@@ -2781,14 +2786,38 @@ li.selector {
 		-webkit-transition: opacity 0.2s ease;
 	}
 
-
-
     .contact_info, .form {
 	    width: 100%;
 	    float: none;
 	    margin: 0 auto;
     }
 
+}
+.progress{
+	margin-top: 16px;
+}
+.progress-mobile{
+	margin-top: 16px;
+}
+
+@media screen and (min-width: 768px) {
+			.percents{
+				display: block !important;
+			}
+
+			.progress-mobile{
+				display: none;
+			}
+}
+
+@media screen and (max-width: 768px) {
+			.percents{
+				display: none !important;
+			}
+
+			.progress-mobile{
+				display: inline;
+			}
 }
 
 /* Mobile */
