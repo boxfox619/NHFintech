@@ -156,9 +156,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             </div>
             <div class="desc1 span_3_of_2"; style="position:absolute; bottom:0px; right:0px;">
             <h3><?php echo $title; ?></h3>
-            <p>$ <?php echo $price; ?> <a href="#">click for offer</a></p>
+            <p>$ <?php echo $price; ?> <a>/<?php echo $item_count; ?></a></p>
               <div class="btn_form">
-                <a href="single.html">buy now</a>
+                <form action="../buyProduct.php" method="post" id="buy_form">
+                <input type="hidden" name="post_uid" value="<?php echo $_GET["post_uid"]; ?>">
+                <input type="hidden" name="price" value="<?php echo $price/$item_count; ?>">
+                <input type="text" name="count" value="1" style="width: 3em;">
+                <a href="javascript:{}" onclick="document.getElementById('buy_form').submit();">buy now</a>
+</form>
               </div>
             </div>
             <div class="clearfix"></div>
