@@ -179,8 +179,50 @@ while($stmt2->fetch())
               </form>
             </div>
           </div>
-    </div></div></div>
-    <!-- end content -->
-    <!-- content-section-ends -->
+          <div class="container">
+                   <div class="coats text-center">
+                     <div id="map" style="width:100%;height:500px;"></div>
+                   </div>
+                 </div>
+            </div></div></div>
+           <script type="text/javascript" src="https://apis.daum.net/maps/maps3.js?apikey=799c201accc6d335ad64e9cb2989703c"></script>
+           <script type="text/javascript">
+           var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+           var options = { //php에서 렌더링하기로
+             center: new daum.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
+             level: 3 //지도의 레벨(확대, 축소 정도)
+           };
+
+           var map = new daum.maps.Map(container, options);
+
+           function displayMarker(locPosition, message) {
+
+             // 마커를 생성합니다
+             var marker = new daum.maps.Marker({
+               map: map,
+               position: locPosition
+             });
+
+             var iwContent = message, // 인포윈도우에 표시할 내용
+               iwRemoveable = true;
+
+             // 인포윈도우를 생성합니다
+             var infowindow = new daum.maps.InfoWindow({
+               content : iwContent,
+               removable : iwRemoveable
+             });
+
+             // 인포윈도우를 마커위에 표시합니다
+            infowindow.open(map, marker);
+
+             // 지도 중심좌표를 접속위치로 변경합니다
+             map.setCenter(locPosition);
+           }
+           var options = { //php에서 렌더링하기로
+             center: new daum.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
+             level: 3 //지도의 레벨(확대, 축소 정도)
+           };
+           displayMarker(options["center"], "title");
+           </script>
   </body>
 </html>
