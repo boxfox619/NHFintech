@@ -59,8 +59,7 @@ i.cart {
 }
 .logo {
 	float:left;
-	width:14%;
-	margin-top: 8px;
+	margin-top: 2px;
 }
 /*--start-search--*/
 .sb-search {
@@ -2752,10 +2751,6 @@ li.selector {
 
 /* Tablet */
 @media screen and (max-width: 768px) {
-
-
-
-
 	.services_nav_list {
 		display: none;
 	}
@@ -2798,6 +2793,10 @@ li.selector {
 
 /* Mobile */
 @media screen and (max-width: 480px) {
+
+	.logo a img{
+		width: 30px;
+	}
 
 	header h1 {
 		font-family: 'Bitter', sans-serif;
@@ -2923,9 +2922,6 @@ h3.c-head{
 		width: 43%;
 		margin: 8em auto 0;
 	}
-	.logo {
-		width: 16%;
-	}
 	.sb-search {
 		right: 160px;
 	}
@@ -2983,9 +2979,8 @@ h3.c-head{
 	.top-header {
 		padding: 1.6em 0 1.5em 0;
 	}
-	.logo {
-		width: 19%;
-	}
+
+
 	.sb-search {
 		right: 110px;
 	}
@@ -3098,9 +3093,6 @@ h3.c-head{
 	.sb-search {
 		right: 100px;
 		top: 18px;
-	}
-	.logo {
-		width: 17%;
 	}
 	.sb-search.sb-search-open, .no-js .sb-search {
 		width: 21%;
@@ -3380,10 +3372,6 @@ h3.c-head{
 }
 
 @media screen and (max-width: 800px) {
-	.logo {
-		width: 26%;
-		margin-top:0;
-	}
 	.navigation {
 		margin-top: 0;
 		width: 100%;
@@ -3718,9 +3706,6 @@ h3.c-head{
 	}
 }
 @media screen and (max-width: 640px) {
-	.logo img {
-		width: 65%;
-	}
 	.up-arrow {
 		left: 275px;
 	}
@@ -4176,9 +4161,6 @@ h3.c-head{
 	.sb-search.sb-search-open, .no-js .sb-search {
 		width: 46%;
 	}
-	.logo img {
-		width: 80%;
-	}
 	.span_2_of_3 {
 		width: 100%;
 	}
@@ -4394,12 +4376,6 @@ h3.c-head{
 	}
 	.banner {
 		min-height: 216px;
-	}
-	.logo img {
-		width: 100%;
-	}
-	.logo {
-		width: 32%;
 	}
 	.mens-toolbar .sort {
 		width: 100%;
