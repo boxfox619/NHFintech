@@ -28,7 +28,7 @@ function seeMore(category){
 var params = 'begin='+items+'&count=10&category='+category;
   $.ajax({
   type: "POST",
-  url: 'http://sprout.kr/nh/ReadPost.php',
+      url: '/nh/ReadPost.php',
   data: params,
   success: function(responseData){
       for( var i = 0; i < responseData.length; i += 1 ) {
@@ -102,5 +102,5 @@ function createItemHtml(title, image, category, price, percent, no){
 }
 
 function single(no){
-  window.location.href='/single?post_uid='+no;
+    window.location.href='/nh/NHFintech/single.php?post_uid='+no;
 }
