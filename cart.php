@@ -4,9 +4,7 @@ if(!$_SESSION["id"])
 {
     echo "<script>document.location.href=\"/nh/NHFintech/signin.html\"</script>";
 }
-
 ?>
-
 <!--
 Author: W3layouts
 Author URL: http://w3layouts.com
