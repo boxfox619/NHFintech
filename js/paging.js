@@ -24,7 +24,7 @@ var filterList = {
 };
 
 var items = 0;
-function seeMore(category){
+function seeMore(category,filter=""){
 var params = 'begin='+items+'&count=10&category='+category;
   $.ajax({
   type: "POST",
@@ -34,8 +34,14 @@ var params = 'begin='+items+'&count=10&category='+category;
       for( var i = 0; i < responseData.length; i += 1 ) {
         items++;
         var data = responseData[i];
-        if(data.title!=undefined){
-        var item = createItemHtml(data['title'], data['image'], data['category'], data['price'], 50, data['no']);
+          if(data.title!=undefined){
+              if(!data['per'])
+                  var per = 0;
+              else
+                  var per = data['per'];
+              if(data['title'].indexOf(filter) == -1)
+                  continue;
+        var item = createItemHtml(data['title'], data['image'], data['category'], data['price'], per, data['no']);
         $('#portfoliolist').append(item);
         }
       }
@@ -48,13 +54,13 @@ var params = 'begin='+items+'&count=10&category='+category;
 function getCart(){
   $.ajax({
   type: "POST",
-  url: 'http://sprout.kr/nh/ReadCart.php',
+  url: 'http://sprout.kr/nh/ReadHistory.php',
   success: function(responseData){
       for( var i = 0; i < responseData.length; i += 1 ) {
         items++;
         var data = responseData[i];
         if(data.title!=undefined){
-        var item = createItemHtml(data['title'], data['image'], data['category'], data['price'], 50, data['no']);
+        var item = createItemHtml(data['title'], data['image'], data['category'], data['pay']+'/'+data['price'], data['per'], data['no']);
         $('#portfoliolist').append(item);
         }
       }
@@ -62,9 +68,9 @@ function getCart(){
       if(items>0){
         $('#not-have').hide();
       }
+      filterList.init();
     }
   });
-  filterList.init();
 }
 
 function createItemHtml(title, image, category, price, percent, no){
@@ -79,15 +85,15 @@ function createItemHtml(title, image, category, price, percent, no){
   return '<div onclick="single('+no+')" class="portfolio '+category+' mix_all" data-cat="'+category+'" style="display: inline-block; opacity: 1;">'+
   						'<div class="portfolio-wrapper">'+
   							'<a class="b-link-stripe b-animate-go  thickbox">'+
-  						     '<img src="'+image+'" class="img-responsive" alt="" /><div class="b-wrapper"><div class="atc"><p>장바구니로!</p></div><div class="clearfix"></div><h2 class="b-animate b-from-left    b-delay03 "><img src="images/icon-eye.png" class="img-responsive go" alt=""/></h2>'+
+  						     '<img id="fixed-img" src="'+image+'" class="img-responsive" alt="" /><div class="b-wrapper"><div class="atc"><p>장바구니로!</p></div><div class="clearfix"></div><h2 class="b-animate b-from-left    b-delay03 "><img src="images/icon-eye.png" class="img-responsive go" alt=""/></h2>'+
   						  	'</div></a>'+
   							'<div class="title">'+
   								'<div class="colors">'+
   								'<h4>'+title+'</h4>'+
   								'<p> 달성률:'+
                   '<span class="progress-mobile">'+percent+'%</span></p>'+
-  									'<div class="progress percents">'+
-                      '<div class="progress-bar percents '+progressClass+'" role="progressbar" aria-valuenow="'+percent+'" aria-valuemin="0" aria-valuemax="100" style="width: 100px;">'+
+  									'<div class="progress percents" style="width: 100px;">'+
+                      '<div class="progress-bar percents '+progressClass+'" role="progressbar" aria-valuenow="'+percent+'" aria-valuemin="0" aria-valuemax="100" style="width: '+percent+'px;">'+
                       percent+'%'+
                       '</div>'+
                       '</div>'+
