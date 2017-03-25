@@ -105,7 +105,7 @@
 .sky-form .radio input:checked + i,
 .sky-form .checkbox input:checked + i,
 .sky-form .toggle input:checked + i {
-	border-color:#888;	
+	border-color:#888;
 }
 /*-- start scrollpane --*/
 .jspContainer{
