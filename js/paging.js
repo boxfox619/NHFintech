@@ -37,6 +37,8 @@ var params = 'begin='+items+'&count=10&category='+category;
           if(data.title!=undefined){
               if(!data['per'])
                   var per = 0;
+              else if(data['per']>100)
+                  var per = 100;
               else
                   var per = data['per'];
               if(data['title'].indexOf(filter) == -1)
@@ -109,4 +111,55 @@ function createItemHtml(title, image, category, price, percent, no){
 
 function single(no){
     window.location.href='/nh/NHFintech/single.php?post_uid='+no;
+}
+
+function loadNotifications(){
+    $.ajax({
+    type: "POST",
+    url: '/nh/ReadMyPost.php',
+    success: function(responseData){
+        for( var i = 0; i < responseData.length; i += 1 ) {
+          var data = responseData[i];
+          if(data.title!=undefined){
+          var item = createNotification(data['title'], data['per'], data['no']);
+          $('#notifi-list').append(item);
+          }
+        }
+      }
+    });
+}
+
+function createNotification(title, percent, no){
+  '<span class="list-group-item">First item <a style="position: absolute; right:10px; top: 3px;" onclick="cancel('+no+', '+percent+')" class="btn btn-warning">취소</a><a onclick="complete('+no+', '+percent+')" style="position: absolute; right: 65px; top: 3px;" class="btn btn-success">확정</a></span>';
+}
+
+function cancel(no, percent){
+  var result = confirm("정말로 삭제하시겠습니까?");
+  if(result){
+    $.ajax({
+    type: "POST",
+    url: '/nh/DeletePost.php',
+    data: 'post_pid='+no,
+    success: function(responseData){
+      location.reload();
+    }
+    });
+  }
+}
+
+function complete(no, percent){
+  if(percent<100){
+    alert('조건이 충족되지 않았습니다!');
+  }else{
+  var result = confirm("공동구매를 확정하시겠습니까??");
+    if(result){
+      $.ajax({
+      type: "POST",
+      url: '/nh/Confirm.php',
+      data: 'post_pid='+no,
+      success: function(responseData){
+        location.reload();
+      });
+    }
+  }
 }

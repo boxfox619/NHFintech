@@ -1,7 +1,7 @@
 function loadNotifications(){
     $.ajax({
     type: "POST",
-    url: '/nh/ReadMyPost.php',
+    url: '/nh/NHFintech/ReadMyPost.php',
     success: function(responseData){
         for( var i = 0; i < responseData.length; i += 1 ) {
           var data = responseData[i];
@@ -23,7 +23,7 @@ function cancel(no, percent){
   if(result){
     $.ajax({
     type: "POST",
-    url: '/nh/DeletePost.php',
+    url: '/nh/NHFintech/DeletePost.php',
     data: 'post_pid='+no,
     success: function(responseData){
       location.reload();
@@ -40,7 +40,7 @@ function complete(no, percent){
     if(result){
       $.ajax({
       type: "POST",
-      url: '/nh/Confirm.php',
+      url: '/nh/NHFintech/Confirm.php',
       data: 'post_pid='+no,
       success: function(responseData){
         location.reload();
@@ -48,3 +48,4 @@ function complete(no, percent){
     }
   }
 }
+>>>>>>> 41a00da7c1ef6f408736fc79eb4b447745d35579
