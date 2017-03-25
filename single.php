@@ -84,50 +84,50 @@ jQuery(document).ready(function($) {
   <body>
     <!-- header-section-starts -->
     <div class="header" id="home">
-      <div class="top-header">
-        <div class="container">
-        <div class="logo">
-          <a href="/nh/NHFintech/">
-            <img src="./images/logo_w_ver2.png" style="width:60px;">
-        </div>
-          <div class="header-top-right">
-          <!-- start search-->
-              <div class="search-box">
-                <div id="sb-search" class="sb-search">
-                <form>
-                  <input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
-                  <input class="sb-search-submit" type="submit" value="">
-                  <span class="sb-icon-search"> </span>
-                </form>
-              </div>
-              </div>
+        <div class="top-header">
+            <div class="container">
+            <div class="logo">
+                <a href="/nh/NHFintech/">
+                    <img src="./images/logo_w_ver2.png" style="width:60px;">
+            </div>
+                <div class="header-top-right">
+                <!-- start search-->
+                    <div class="search-box">
+                        <div id="sb-search" class="sb-search">
+                            <form>
+                                <input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
+                                <input class="sb-search-submit" type="submit" value="">
+                                <span class="sb-icon-search"> </span>
+                            </form>
+                        </div>
+                    </div>
 
-            <!-- search-scripts -->
-            <script src="js/classie.js"></script>
-            <script src="js/uisearch.js"></script>
+                    <!-- search-scripts -->
+                    <script src="js/classie.js"></script>
+                    <script src="js/uisearch.js"></script>
 <script>
 new UISearch( document.getElementById( 'sb-search' ) );
 </script>
-            <!-- //search-scripts -->
+                    <!-- //search-scripts -->
 
-            <a href="cart.php"><i class="cart"></i></a>
-          </div>
-        <div class="navigation">
-        <div>
-                <label class="mobile_menu" for="mobile_menu">
-                <span>Menu</span>
-                </label>
-                <input id="mobile_menu" type="checkbox">
-          <ul class="nav">
+                    <a href="cart.php"><i class="cart"></i></a>
+                </div>
+            <div class="navigation">
+            <div>
+              <label class="mobile_menu" for="mobile_menu">
+              <span>Menu</span>
+              </label>
+              <input id="mobile_menu" type="checkbox">
+                <ul class="nav">
 
-            <li class="active"><a href="/nh/NHFintech">Home</a></li>
-                <li class="active"><a href="/nh/NHFintech">공동 구매</a></li>
-                <li class="active"><a href="/nh/NHFintech/contact.html">공구 등록</a></li>
-            </ul>
-      </div>
-     </div>
+                    <li class="active"><a href="/nh/NHFintech">Home</a></li>
+                    <li class="active"><a href="/nh/NHFintech/info-bought.html">공구 안내</a></li>
+          <li class="active"><a href="/nh/NHFintech/contact.html">공구 등록</a></li>
+          </ul>
         </div>
-      </div>
+     </div>
+            </div>
+        </div>
      </div>
   <!-- start-single-page -->
   <!-- content -->
@@ -151,9 +151,9 @@ new UISearch( document.getElementById( 'sb-search' ) );
             </div>
 
 
-            <div class="container">
+            <div class="container" style="position:absolute; top:0px; right:0px;">
               <div class="coats text-center">
-                <div id="map" style="width:100%;height:300px;"></div>
+                <div id="map" style="width:150px;height:300px;"></div>
               </div>
             </div>
 
@@ -166,7 +166,7 @@ new UISearch( document.getElementById( 'sb-search' ) );
                 <input type="hidden" name="price" value="<?php echo $price/$item_count; ?>">
                 <input type="text" name="count" value="1" style="width: 3em;">
                 <a href="javascript:{}" onclick="document.getElementById('buy_form').submit();">buy now</a>
-                <a href="javascript:{}" onclick="$('chat-modal').show();">판매자 아이디</a>
+                <a id="writer-id" href="javascript:{}" onclick="$('chat-modal').show();">문의하기</a>
 </form>
               </div>
             </div>
