@@ -28,7 +28,7 @@ function seeMore(category){
 var params = 'begin='+items+'&count=10&category='+category;
   $.ajax({
   type: "POST",
-  url: '/ReadPost.php',
+  url: 'http://sprout.kr/nh/ReadPost.php',
   data: params,
   success: function(responseData){
       for( var i = 0; i < responseData.length; i += 1 ) {
@@ -79,7 +79,7 @@ function createItemHtml(title, image, category, price, percent, no){
   return '<div onclick="single('+no+')" class="portfolio '+category+' mix_all" data-cat="'+category+'" style="display: inline-block; opacity: 1;">'+
   						'<div class="portfolio-wrapper">'+
   							'<a class="b-link-stripe b-animate-go  thickbox">'+
-  						     '<img src="'+image+'" class="img-responsive" alt="" /><div class="b-wrapper"><div class="atc"><p>장바구니로!</p></div><div class="clearfix"></div><h2 class="b-animate b-from-left    b-delay03 "><img src="images/icon-eye.png" class="img-responsive go" alt=""/></h2>'+
+  						     '<img id="fixed-img" src="'+image+'" class="img-responsive" alt="" /><div class="b-wrapper"><div class="atc"><p>장바구니로!</p></div><div class="clearfix"></div><h2 class="b-animate b-from-left    b-delay03 "><img src="images/icon-eye.png" class="img-responsive go" alt=""/></h2>'+
   						  	'</div></a>'+
   							'<div class="title">'+
   								'<div class="colors">'+
