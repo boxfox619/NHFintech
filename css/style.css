@@ -2758,8 +2758,6 @@ li.selector {
 
 /* Tablet */
 @media screen and (max-width: 768px) {
-
-
 	.services_nav_list {
 		display: none;
 	}
@@ -3405,6 +3403,11 @@ h3.c-head{
 }
 
 @media screen and (max-width: 800px) {
+
+		#maps, #map{
+			display: none;
+		}
+
 	.navigation {
 		margin-top: 0;
 		width: 100%;
