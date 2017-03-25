@@ -35,7 +35,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="top-header">
 			<div class="container">
 			<div class="logo">
-				<a href="index.html">
+				<a href="/nh/NHFintech/">
 					<img src="./images/logo_w_ver2.png" style="width:60px;">
 			</div>
 				<div class="header-top-right">
@@ -68,8 +68,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
               <input id="mobile_menu" type="checkbox">
 				<ul class="nav">
 
-					<li class="active"><a href="index.html">Home</a></li>
-							<li class="active"><a href="index.html">공동 구매</a></li>
+					<li class="active"><a href="/nh/NHFintech">Home</a></li>
+							<li class="active"><a href="/nh/NHFintech">공동 구매</a></li>
 							<li class="active"><a href="index.html">개인 설정</a></li>
           </ul>
 		</div>
@@ -97,9 +97,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</ul>
 
 					<div id="portfoliolist">
-
-
-
 					<div class="clearfix"></div>
 				</div>
 		  <div class="clearfix"></div>

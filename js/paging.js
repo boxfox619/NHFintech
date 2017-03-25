@@ -78,5 +78,5 @@ function createItemHtml(title, image, category, price, percent, no){
 }
 
 function single(no){
-  window.location.href='/single?post_uid='+no;
+    window.location.href='/nh/NHFintech/single.php?post_uid='+no;
 }
