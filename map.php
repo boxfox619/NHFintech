@@ -1,4 +1,18 @@
+<?php
+session_start();
 
+$conn = new mysqli("127.0.0.1", "root", "sprout9427!#@", "nh");
+if (mysqli_connect_error())
+{
+    printf("ERROR");
+}
+
+$sql = "SELECT `title`,`latitude`,`hardness` FROM `post`";
+$stmt = $conn->prepare($sql);
+$stmt->execute();
+$stmt->bind_result($title,$lat,$har);
+
+?>
 <!--
 Author: W3layouts
 Author URL: http://w3layouts.com
@@ -26,11 +40,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <script src="js/jquery.easydropdown.js"></script>
     <link href="css/nav.css" rel="stylesheet" type="text/css" media="all"/>
     <script type="text/javascript" src="js/hover_pack.js"></script>
-    <script type="text/javascript">
-      jQuery(document).ready(function($) {
-        $(".scroll").click(function(event){
-          event.preventDefault();
-          $('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+    $(".scroll").click(function(event){
+        event.preventDefault();
+        $('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
         });
       });
     </script>
@@ -41,7 +55,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
       <div class="top-header">
         <div class="container">
           <div class="logo">
-            <a href="index.html"><img src="images/logo.png" alt="" /></a>
+            <a href="index.php"><img src="./images/logo_w_ver2.png" alt="" /></a>
           </div>
           <div class="header-top-right">
             <!-- start search-->
@@ -57,9 +71,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <!-- search-scripts -->
             <script src="js/classie.js"></script>
             <script src="js/uisearch.js"></script>
-            <script>
-              new UISearch( document.getElementById( 'sb-search' ) );
-            </script>
+<script>
+new UISearch( document.getElementById( 'sb-search' ) );
+</script>
             <!-- //search-scripts -->
 
             <a href="cart.php"><i class="cart"></i></a>
@@ -71,31 +85,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
               </label>
               <input id="mobile_menu" type="checkbox">
               <ul class="nav">
-                <li class="active"><a href="index.html">Home</a></li>
-                <li class="dropdown1"><a href="#">Dresses</a>
-                  <ul class="dropdown2">
-                    <li><a href="products.html">Dress Materials</a></li>
-                    <li><a href="products.html">Kurta & Kurti</a></li>
-                    <li><a href="products.html">Sarees</a></li>
-                    <li><a href="products.html">Chudidars</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown1"><a href="#">Bags</a>
-                  <ul class="dropdown2">
-                    <li><a href="products.html">Latest</a></li>
-                    <li><a href="products.html">Leather Bags</a></li>
-                    <li><a href="products.html">Hand Bags</a></li>
-                  </ul>
-                </li>
-              </li>
-              <li class="dropdown1"><a href="#">Shoes</a>
-                <ul class="dropdown2">
-                  <li><a href="products.html">Sports Shoes</a></li>
-                  <li><a href="products.html">Casual Shoes</a></li>
-                  <li><a href="products.html">Formal Shoes</a></li>
-                </ul>
-              </li>
-              <li><a href="contact.html">Contact US</a></li>
+                    <li class="active"><a href="/nh/NHFintech">Home</a></li>
+                    <li class="active"><a href="/nh/NHFintech/info-bought.html">공구 안내</a></li>
+          <li class="active"><a href="/nh/NHFintech/contact.html">공구 등록</a></li>
               <div class="clearfix"></div>
             </ul>
           </div>
@@ -111,53 +103,59 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   </div>
 
   <script type="text/javascript" src="https://apis.daum.net/maps/maps3.js?apikey=799c201accc6d335ad64e9cb2989703c"></script>
-  <script>
-    if (navigator.geolocation) {
+<script>
+var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+var options = { //php에서 렌더링하기로
+center: new daum.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
+    level: 3 //지도의 레벨(확대, 축소 정도)
+  };
+  var map = new daum.maps.Map(container, options);
+  if (navigator.geolocation) {
 
       navigator.geolocation.getCurrentPosition(function(position) {
-        var lat = position.coords.latitude
-        var lng =  position.coords.longitude
-        console.log(lat, lng);
-        var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+          lat = position.coords.latitude
+              lng =  position.coords.longitude
+              console.log(lat, lng);
           mapOption = {
-            center: new daum.maps.LatLng(lat, lng), // 지도의 중심좌표
+          center: new daum.maps.LatLng(lat, lng), // 지도의 중심좌표
             level: 2 // 지도의 확대 레벨
           };
-
-        var map = new daum.maps.Map(mapContainer, mapOption);
+          map.setCenter(mapOption["center"]);
       });
-
     } else { // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정합니다
-      var locPosition = new daum.maps.LatLng(50.450701, 129.570667),
-        message = 'geolocation을 사용할수 없어요..'
-
-      displayMarker(locPosition, message);
+        var locPosition = new daum.maps.LatLng(50.450701, 129.570667),
+            message = 'geolocation을 사용할수 없어요..'
+            displayMarker(locPosition, message);
     }
 
-// 지도에 마커와 인포윈도우를 표시하는 함수입니다
-function displayMarker(locPosition, message) {
+    function displayMarker(locPosition, message) {
 
-  // 마커를 생성합니다
-  var marker = new daum.maps.Marker({
-    map: map,
-    position: locPosition
-  });
+        // 마커를 생성합니다
+        var marker = new daum.maps.Marker({
+        map: map,
+            position: locPosition
+      });
 
-  var iwContent = message, // 인포윈도우에 표시할 내용
-    iwRemoveable = true;
+      var iwContent = message, // 인포윈도우에 표시할 내용
+          iwRemoveable = true;
 
-  // 인포윈도우를 생성합니다
-  var infowindow = new daum.maps.InfoWindow({
-    content : iwContent,
-    removable : iwRemoveable
-  });
+      // 인포윈도우를 생성합니다
+      var infowindow = new daum.maps.InfoWindow({
+      content : iwContent,
+          removable : iwRemoveable
+      });
 
-  // 인포윈도우를 마커위에 표시합니다
-  infowindow.open(map, marker);
+      // 인포윈도우를 마커위에 표시합니다
+      infowindow.open(map, marker);
 
-  // 지도 중심좌표를 접속위치로 변경합니다
-  map.setCenter(locPosition);
+    }
+<?php
+while($stmt->fetch())
+{
+    if($lat)
+        echo "displayMarker(new daum.maps.LatLng(".$lat.",".$har."),\"".$title."\");";
 }
-  </script>
+?>
+</script>
 </body>
 </html>
