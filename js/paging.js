@@ -23,20 +23,44 @@ var filterList = {
     }
 };
 
-var item = 0;
+var items = 0;
 function seeMore(category){
-var params = 'begin='+item+'&count=10&category='+category;
+var params = 'begin='+items+'&count=10&category='+category;
   $.ajax({
   type: "POST",
-  url: 'http://sprout.kr/nh/ReadPost.php',
+  url: '/ReadPost.php',
   data: params,
   success: function(responseData){
       for( var i = 0; i < responseData.length; i += 1 ) {
+        items++;
         var data = responseData[i];
         if(data.title!=undefined){
         var item = createItemHtml(data['title'], data['image'], data['category'], data['price'], 50, data['no']);
         $('#portfoliolist').append(item);
         }
+      }
+    }
+  });
+  filterList.init();
+}
+
+
+function getCart(){
+  $.ajax({
+  type: "POST",
+  url: 'http://sprout.kr/nh/ReadCart.php',
+  success: function(responseData){
+      for( var i = 0; i < responseData.length; i += 1 ) {
+        items++;
+        var data = responseData[i];
+        if(data.title!=undefined){
+        var item = createItemHtml(data['title'], data['image'], data['category'], data['price'], 50, data['no']);
+        $('#portfoliolist').append(item);
+        }
+      }
+      $('#cart-count').text(items);
+      if(items>0){
+        $('#not-have').hide();
       }
     }
   });
