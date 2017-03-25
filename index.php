@@ -30,96 +30,96 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<!-- header-section-starts -->
-	<div class="header" id="home">
-		<div class="top-header">
-			<div class="container">
-			<div class="logo">
-				<a href="/nh/NHFintech/">
-					<img src="./images/logo_w_ver2.png" style="width:60px;">
-			</div>
-				<div class="header-top-right">
-				<!-- start search-->
-				    <div class="search-box">
-					    <div id="sb-search" class="sb-search">
-							<form>
-								<input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
-								<input class="sb-search-submit" type="submit" value="">
-								<span class="sb-icon-search"> </span>
-							</form>
-						</div>
-				    </div>
+    <!-- header-section-starts -->
+    <div class="header" id="home">
+        <div class="top-header">
+            <div class="container">
+            <div class="logo">
+                <a href="/nh/NHFintech/">
+                    <img src="./images/logo_w_ver2.png" style="width:60px;">
+            </div>
+                <div class="header-top-right">
+                <!-- start search-->
+                    <div class="search-box">
+                        <div id="sb-search" class="sb-search">
+                            <form>
+                                <input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
+                                <input class="sb-search-submit" type="submit" value="">
+                                <span class="sb-icon-search"> </span>
+                            </form>
+                        </div>
+                    </div>
 
-					<!-- search-scripts -->
-					<script src="js/classie.js"></script>
-					<script src="js/uisearch.js"></script>
-						<script>
-							new UISearch( document.getElementById( 'sb-search' ) );
-						</script>
-					<!-- //search-scripts -->
+                    <!-- search-scripts -->
+                    <script src="js/classie.js"></script>
+                    <script src="js/uisearch.js"></script>
+<script>
+new UISearch( document.getElementById( 'sb-search' ) );
+</script>
+                    <!-- //search-scripts -->
 
-					<a href="cart.html"><i class="cart"></i></a>
-				</div>
-			<div class="navigation">
-			<div>
+                    <a href="cart.php"><i class="cart"></i></a>
+                </div>
+            <div class="navigation">
+            <div>
               <label class="mobile_menu" for="mobile_menu">
               <span>Menu</span>
               </label>
               <input id="mobile_menu" type="checkbox">
-				<ul class="nav">
+                <ul class="nav">
 
-					<li class="active"><a href="/nh/NHFintech">Home</a></li>
-					<li class="active"><a href="/nh/NHFintech/info-bought.html">공구 안내</a></li>
+                    <li class="active"><a href="/nh/NHFintech">Home</a></li>
+                    <li class="active"><a href="/nh/NHFintech/info-bought.html">공구 안내</a></li>
           <li class="active"><a href="/nh/NHFintech/contact.html">공구 등록</a></li>
           </ul>
-		</div>
-	 </div>
-			</div>
-		</div>
-	 </div>
+        </div>
+     </div>
+            </div>
+        </div>
+     </div>
 
-	<div class="content">
-		<div class="container">
-			<div class="products-section">
-				<div class="products-section-head text-center">
-					<h3><span>1</span>로 모여!</h3>
-					<p>신개념 공동구매 플랫폼!</p>
-				</div>
-				<div class="products-section-grids">
-					<ul id="filters" class="clearfix">
-						<li><span class="filter active" data-filter="1 2 3 4 9"><label class="active"></label>전체</span></li>
-						<li><span class="filter" data-filter="1"><label></label>생필품</span></li>
-						<li><span class="filter" data-filter="2"><label></label>가공식품</span></li>
-						<li><span class="filter" data-filter="3"><label></label>농수산물</span></li>
-						</ul>
+    <div class="content">
+        <div class="container">
+            <div class="products-section">
+                <div class="products-section-head text-center">
+                    <h3><span>1</span>로 모여!</h3>
+                    <p>신개념 공동구매 플랫폼!</p>
+                </div>
+                <div class="products-section-grids">
+                    <ul id="filters" class="clearfix">
+                        <li><span class="filter active" data-filter="1 2 3 4 9"><label class="active"></label>전체</span></li>
+                        <li><span class="filter" data-filter="1"><label></label>생필품</span></li>
+                        <li><span class="filter" data-filter="2"><label></label>가공식품</span></li>
+                        <li><span class="filter" data-filter="3"><label></label>농수산물</span></li>
+                        </ul>
 
-					<div id="portfoliolist">
-					<div class="clearfix"></div>
-				</div>
-		  <div class="clearfix"></div>
-				<div class="seemore" style="text-align: center !important;" onclick="seeMore('*');">
-					<a>See More</a>
-				</div>
-		  </div>
+                    <div id="portfoliolist">
+                    <div class="clearfix"></div>
+                </div>
+          <div class="clearfix"></div>
+          <div class="seemore" style="text-align: center !important;" onclick="seeMore('*','<?php echo $_GET["search"]; ?>');">
+                    <a>See More</a>
+                </div>
+          </div>
 
-		  <!-- script-for-portfolio -->
-		  <script type="text/javascript">
-		jQuery(document).ready(function($) {
-			$(".scroll").click(function(event){
-				event.preventDefault();
-				$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
-			});
-		});
-	</script>
+          <!-- script-for-portfolio -->
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+    $(".scroll").click(function(event){
+        event.preventDefault();
+        $('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+            });
+        });
+    </script>
 
 <script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
-	<script type="text/javascript">
-	$(function () {
-		seeMore('*');
-	});
-	</script>
-				</div>
-			</div>
-		</div>
+<script type="text/javascript">
+$(function () {
+    seeMore('*');
+    });
+    </script>
+                </div>
+            </div>
+        </div>
 </body>
 </html>
