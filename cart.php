@@ -201,18 +201,18 @@ function complete(no, percent){
     if(percent<100){
         alert('조건이 충족되지 않았습니다!');
   }else{
-      var result = confirm("공동구매를 확정하시겠습니까??");
-      if(result){
-          $.ajax({
-          type: "POST",
-              url: '/nh/Confirm.php',
-              data: 'post_pid='+no,
-              success: function(responseData)}
-              location.reload();
+  var result = confirm("공동구매를 확정하시겠습니까??");
+    if(result){
+      $.ajax({
+      type: "POST",
+      url: '/nh/Confirm.php',
+      data: 'post_pid='+no,
+      success: function(responseData){
+        location.reload();
       }
     });
   }
-  }
+}
 }
 
 $(function () {
