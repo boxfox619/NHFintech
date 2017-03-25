@@ -3,11 +3,11 @@ session_start();
 
 $conn = new mysqli("127.0.0.1", "root", "sprout9427!#@", "nh");
 
-$sql = "SELECT `title`, `image`, `price`, `item_count`, `content`, `address` FROM `post` WHERE `post_uid`=?";
+$sql = "SELECT `latitude`,`hardness`,`title`, `image`, `price`, `item_count`, `content`, `address` FROM `post` WHERE `post_uid`=?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param('s',$_GET["post_uid"]);
 $stmt->execute();
-$stmt->bind_result($title,$image,$price,$item_count,$content,$address);
+$stmt->bind_result($latitude,$hardness,$title,$image,$price,$item_count,$content,$address);
 $stmt->fetch();
 ?>
 <!--
@@ -204,7 +204,7 @@ while($stmt2->fetch())
     <script type="text/javascript">
     var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
     var options = { //php에서 렌더링하기로
-      center: new daum.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
+    center: new daum.maps.LatLng(<?php echo $latitude.",".$hardness; ?>), //지도의 중심좌표.
       level: 3 //지도의 레벨(확대, 축소 정도)
     };
 
@@ -234,10 +234,10 @@ while($stmt2->fetch())
       map.setCenter(locPosition);
     }
     var options = { //php에서 렌더링하기로
-      center: new daum.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
+    center: new daum.maps.LatLng(<?php echo $latitude.",".$hardness; ?>), //지도의 중심좌표.
       level: 3 //지도의 레벨(확대, 축소 정도)
     };
-    displayMarker(options["center"], "title");
+    displayMarker(options["center"], "<?php echo $title; ?>");
     </script>
     <!-- end content -->
     <!-- content-section-ends -->
