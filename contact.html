@@ -24,7 +24,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- dropdown -->
 <script src="js/jquery.easydropdown.js"></script>
 <link href="css/nav.css" rel="stylesheet" type="text/css" media="all"/>
-<script type="text/javascript" src="js/hover_pack.js"></script>
 		  <script type="text/javascript">
 		jQuery(document).ready(function($) {
 			$(".scroll").click(function(event){
@@ -109,8 +108,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="contact">
 				  <div class="contact-form" style="margin-top:30px;">
 			 	  	 	<h2>Contact Us</h2>
-			 	 	    <form method="post" action="contact-post.html">
+			 	 	    <form method="post" action="contact-post.html" id="myForm">
 					    	<div>
+									<input type="hidden" name="lat" id="lat" value="">
+									<input type="hidden" name="lng" id="lng" value="">
 						    	<span><label>제목</label></span>
 						    	<span><input name="userName" type="text" class="textbox"></span>
 						    </div>
@@ -127,8 +128,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						    	<span><input name="userPhone" type="text" class="textbox"></span>
 						    </div>
 								<div>
-						     	<span><label>주소</label></span>
-						    	<span><input name="userPhone" type="text" class="textbox"></span>
+						     	<span><label>주소 <span id="place_check_span" style="font-size:10px;"></span></label></span>
+						    	<span><input id="place_input" onchange="place_change(this.value)" name="place" type="text" class="textbox"></span>
 						    </div>
 								<div>
 						     	<span><label>기간</label></span>
@@ -142,16 +143,100 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         			</script>
 
 						   <div>
-						   		<span><input type="submit" class="" value="Submit us"></span>
+						   		<span><input id="contact_submit" onclick="searchBoard(this)" type="button" value="Submit Us"></span>
 						  </div>
 					    </form>
 				    </div>
   				<div class="clearfix"></div>
 			  </div>
+				<div class="container" style="margin-top:30px;"><div class="coats sing-c text-center" style="margin-top:20px;">
+						<button type="button" id="place_check" name="button">주소 확인</button>
+		          <div id="map" style="width:100%;height:500px;"></div>
+		    </div>
 </div>
 
-	<!-- content-section-ends -->
 
+
+<script type="text/javascript" src="https://apis.daum.net/maps/maps3.js?apikey=c26ce78132fcbcbb9945deac0c684fed"></script>
+
+<script>
+var flag = 0;
+var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+var options = { //지도를 생성할 때 필요한 기본 옵션
+center: new daum.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
+level: 3 //지도의 레벨(확대, 축소 정도)
+};
+
+var map = new daum.maps.Map(container, options); //지도 생성 및 객체 리턴
+
+	$('#place_check').click(function(){
+		var place_value = $('#place_input').val();
+		url = "https://apis.daum.net/local/geo/addr2coord?apikey=c26ce78132fcbcbb9945deac0c684fed&q="+place_value+"&output=json";
+		console.log(url);
+		$.post("http://127.0.0.1:8282/",
+    {
+        url: url
+    },
+    function(data, status){
+        data = JSON.parse(data);
+				var lat = data["channel"]["item"][0]["lat"];
+				var lng = data["channel"]["item"][0]["lng"];
+				mapContainer = document.getElementById('map') // 지도를 표시할 div
+		    mapOption = {
+		        center: new daum.maps.LatLng(lat, lng), // 지도의 중심좌표
+		        level: 2 // 지도의 확대 레벨
+		    };
+
+		    map = new daum.maps.Map(mapContainer, mapOption);
+				displayMarker(mapOption["center"], "선택한 위치");
+				flag = 1;
+				$('#place_check_span').text("");
+				$('#lat').val(lat);
+				$('#lng').val(lng);
+    });
+	});
+
+	function displayMarker(locPosition, message) {
+
+	    // 마커를 생성합니다
+	    var marker = new daum.maps.Marker({
+	        map: map,
+	        position: locPosition
+	    });
+
+	    var iwContent = message, // 인포윈도우에 표시할 내용
+	        iwRemoveable = true;
+
+	    // 인포윈도우를 생성합니다
+	    var infowindow = new daum.maps.InfoWindow({
+	        content : iwContent,
+	        removable : iwRemoveable
+	    });
+
+	    // 인포윈도우를 마커위에 표시합니다
+	    infowindow.open(map, marker);
+
+	    // 지도 중심좌표를 접속위치로 변경합니다
+	    map.setCenter(locPosition);
+	}
+
+	function place_change(text) {
+		flag = 0;
+		$('#place_check_span').text("주소 확인 버튼을 눌러주세요!")
+	}
+
+
+	function searchBoard(form){
+		if(flag==1) {
+			document.getElementById("myForm").submit();
+		} else {
+			console.log("0");
+
+			return false;
+		}
+	}
+
+</script>
 
 </body>
 </html>
