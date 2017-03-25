@@ -137,7 +137,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
 
-<script type="text/javascript" src="https://apis.daum.net/maps/maps3.js?apikey=c26ce78132fcbcbb9945deac0c684fed"></script>
+<script type="text/javascript" src="https://apis.daum.net/maps/maps3.js?apikey=799c201accc6d335ad64e9cb2989703c"></script>
 
 <script>
 var flag = 0;
@@ -151,7 +151,7 @@ var map = new daum.maps.Map(container, options); //지도 생성 및 객체 리�
 
 	$('#place_check').click(function(){
 		var place_value = $('#place_input').val();
-		url = "https://apis.daum.net/local/geo/addr2coord?apikey=c26ce78132fcbcbb9945deac0c684fed&q="+place_value+"&output=json";
+		url = "https://apis.daum.net/local/geo/addr2coord?apikey=799c201accc6d335ad64e9cb2989703c&q="+place_value+"&output=json";
 		console.log(url);
 		$.post("http://127.0.0.1:8282/",
     {
