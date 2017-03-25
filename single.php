@@ -153,7 +153,7 @@ new UISearch( document.getElementById( 'sb-search' ) );
 
             <div class="container" style="position:absolute; top:0px; right:0px;">
               <div class="coats text-center">
-                <div id="map" style="width:150px;height:300px;"></div>
+                <div id="map" style="width:23em;height:20em;"></div>
               </div>
             </div>
 
