@@ -180,7 +180,7 @@ function loadNotifications(){
 }
 
 function createNotification(title, percent, no){
-  return '<span class="list-group-item">First item <a style="position: absolute; right:10px; top: 3px;" onclick="cancel('+no+', '+percent+')" class="btn btn-warning">취소</a><a onclick="complete('+no+', '+percent+')" style="position: absolute; right: 65px; top: 3px;" class="btn btn-success">확정</a></span>';
+  return '<span class="list-group-item">'+title+'<a style="position: absolute; right:10px; top: 3px;" onclick="cancel('+no+', '+percent+')" class="btn btn-warning">취소</a><a onclick="complete('+no+', '+percent+')" style="position: absolute; right: 65px; top: 3px;" class="btn btn-success">확정</a></span>';
 }
 
 function cancel(no, percent){
