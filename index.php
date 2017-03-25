@@ -58,7 +58,7 @@ new UISearch( document.getElementById( 'sb-search' ) );
 </script>
                     <!-- //search-scripts -->
 
-                    <a href="cart.html"><i class="cart"></i></a>
+                    <a href="cart.php"><i class="cart"></i></a>
                 </div>
             <div class="navigation">
             <div>
