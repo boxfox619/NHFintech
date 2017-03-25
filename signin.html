@@ -104,20 +104,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="login-content">
 		<div class="container">
 			<div class="login-signup-form" style="padding: 0px 12%;">
-				<div class="col-md-5 login text-center" style="border: 0px solid black;">
+        <div class="col-md-5 login text-center" style="border: 0px solid black;">
+          <form action="../LoginProcess.php" method="post">
 					<h4 style="margin-bottom:30px;">login</h4>
 					<div class="cus_info_wrap">
 						<label class="labelTop">
 						ID:
 						</label>
-						<input type="text" value="">
+						<input type="text" name="id">
 					</div>
 					<div class="clearfix"></div>
 					<div class="cus_info_wrap">
 						<label class="labelTop">
 						Password:
 						</label>
-						<input type="password" value="">
+						<input type="password" name="password">
 					</div>
 					<div class="clearfix"></div>
 					<div class="sky-form span_99">
@@ -125,31 +126,49 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="botton1">
 					<input type="submit" value="SIGNIN" class="botton">
 				</div>
-				</div>
-				<div class="col-md-5 login text-center" style="float:right;border: 0px solid black;">
+      </div>
+      </form>
+      <div class="col-md-5 login text-center" style="float:right;border: 0px solid black;">
+        <form action="../JoinProcess.php" method="post">
 					<h4 style="margin-bottom:30px;">signup</h4>
 					<div class="cus_info_wrap">
 						<label class="labelTop">
 						Email Id:
 						</label>
-						<input type="text" value="">
+						<input type="text" name="id">
 					</div>
 					<div class="clearfix"></div>
 				    <div class="cus_info_wrap">
 						<label class="labelTop">
 						Password:
 						</label>
-						<input type="password" value="">
+						<input type="password" name="password">
 					</div>
-					<div class="clearfix"></div><div class="cus_info_wrap">
-						<label class="labelTop confirmpass">
-						Conform Password:
+					<div class="clearfix"></div>
+				    <div class="cus_info_wrap">
+						<label class="labelTop">
+						Pin:
 						</label>
-						<input type="password" value="">
+						<input type="text" name="pin_account">
 					</div>
+          <div class="clearfix"></div><div class="cus_info_wrap">
+						<label class="labelTop confirmpass">
+					  Phone:
+						</label>
+            <input type="text" name="phone">
+          </div>
+          <div class="clearfix"></div><div class="cus_info_wrap">
+						<label class="labelTop confirmpass">
+						Name:
+						</label>
+            <input type="text" name="name">
+          </div>
+
+
 					<div class="botton1">
 					<input type="submit" value="SIGNIN" class="botton">
-				</div>
+        </div>
+        </form>
 				</div>
 
 				<div class="clearfix"></div>
