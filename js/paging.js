@@ -90,8 +90,8 @@ function createItemHtml(title, image, category, price, percent, no){
   								'<h4>'+title+'</h4>'+
   								'<p> 달성률:'+
                   '<span class="progress-mobile">'+percent+'%</span></p>'+
-  									'<div class="progress percents">'+
-                      '<div class="progress-bar percents '+progressClass+'" role="progressbar" aria-valuenow="'+percent+'" aria-valuemin="0" aria-valuemax="100" style="width: 100px;">'+
+  									'<div class="progress percents" style="width: 100px;">'+
+                      '<div class="progress-bar percents '+progressClass+'" role="progressbar" aria-valuenow="'+percent+'" aria-valuemin="0" aria-valuemax="100" style="width: '+percent+'px;">'+
                       percent+'%'+
                       '</div>'+
                       '</div>'+

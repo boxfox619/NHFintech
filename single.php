@@ -68,72 +68,52 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   </head>
   <body>
     <!-- header-section-starts -->
-    <div class="c-header" id="home">
+    <div class="header" id="home">
       <div class="top-header">
         <div class="container">
-          <div class="logo">
-            <a href="index.html"><img src="images/logo.png" alt="" /></a>
-          </div>
+        <div class="logo">
+          <a href="/nh/NHFintech/">
+            <img src="./images/logo_w_ver2.png" style="width:60px;">
+        </div>
           <div class="header-top-right">
-            <!-- start search-->
-            <div class="search-box">
-              <div id="sb-search" class="sb-search">
+          <!-- start search-->
+              <div class="search-box">
+                <div id="sb-search" class="sb-search">
                 <form>
                   <input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
                   <input class="sb-search-submit" type="submit" value="">
                   <span class="sb-icon-search"> </span>
                 </form>
               </div>
-            </div>
+              </div>
+
             <!-- search-scripts -->
             <script src="js/classie.js"></script>
             <script src="js/uisearch.js"></script>
-            <script>
-              new UISearch( document.getElementById( 'sb-search' ) );
-            </script>
+              <script>
+                new UISearch( document.getElementById( 'sb-search' ) );
+              </script>
             <!-- //search-scripts -->
 
             <a href="cart.html"><i class="cart"></i></a>
           </div>
-          <div class="navigation">
-            <div>
-              <label class="mobile_menu" for="mobile_menu">
+        <div class="navigation">
+        <div>
+                <label class="mobile_menu" for="mobile_menu">
                 <span>Menu</span>
-              </label>
-              <input id="mobile_menu" type="checkbox">
-              <ul class="nav">
-                <li class="active"><a href="index.html">Home</a></li>
-                <li class="dropdown1"><a href="#">Dresses</a>
-                  <ul class="dropdown2">
-                    <li><a href="products.html">Dress Materials</a></li>
-                    <li><a href="products.html">Kurta & Kurti</a></li>
-                    <li><a href="products.html">Sarees</a></li>
-                    <li><a href="products.html">Chudidars</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown1"><a href="#">Bags</a>
-                  <ul class="dropdown2">
-                    <li><a href="products.html">Latest</a></li>
-                    <li><a href="products.html">Leather Bags</a></li>
-                    <li><a href="products.html">Hand Bags</a></li>
-                  </ul>
-                </li>
-              </li>
-              <li class="dropdown1"><a href="#">Shoes</a>
-                <ul class="dropdown2">
-                  <li><a href="products.html">Sports Shoes</a></li>
-                  <li><a href="products.html">Casual Shoes</a></li>
-                  <li><a href="products.html">Formal Shoes</a></li>
-                </ul>
-              </li>
-              <li><a href="contact.html">Contact US</a></li>
-              <div class="clearfix"></div>
+                </label>
+                <input id="mobile_menu" type="checkbox">
+          <ul class="nav">
+
+            <li class="active"><a href="/nh/NHFintech">Home</a></li>
+                <li class="active"><a href="/nh/NHFintech">공동 구매</a></li>
+                <li class="active"><a href="index.html">개인 설정</a></li>
             </ul>
-          </div>
+      </div>
+     </div>
         </div>
       </div>
-    </div>
-  </div>
+     </div>
   <!-- start-single-page -->
   <!-- content -->
   <!-- start content -->
