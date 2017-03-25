@@ -100,7 +100,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="clearfix"></div>
 				</div>
 		  <div class="clearfix"></div>
-          <div class="seemore" style="text-align: center !important;" onclick="seeMore('*',"<?php echo $_GET["search"]; ?>");">
+          <div class="seemore" style="text-align: center !important;" onclick="seeMore('*','<?php echo $_GET["search"]; ?>');">
 					<a>See More</a>
 				</div>
 		  </div>
