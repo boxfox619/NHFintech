@@ -62,7 +62,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</script>
 					<!-- //search-scripts -->
 
-					<a href="cart.html"><i class="cart"></i></a>
+					<a href="cart.php"><i class="cart"></i></a>
 				</div>
 			<div class="navigation">
 			<div>
@@ -88,38 +88,39 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="contact">
 				  <div class="contact-form" style="margin-top:30px;">
 			 	  	 	<h2>Contact Us</h2>
-			 	 	    <form method="post" action="contact-post.html" id="myForm">
+              <form method="post" action="../WritePostProcess.php" id="myForm">
 					    	<div>
-									<input type="hidden" name="lat" id="lat" value="">
-									<input type="hidden" name="lng" id="lng" value="">
+									<input type="hidden" name="latitude" id="lat" value="">
+                  <input type="hidden" name="hardness" id="lng" value="">
 						    	<span><label>제목</label></span>
-						    	<span><input name="userName" type="text" class="textbox"></span>
+						    	<span><input name="title" type="text" class="textbox"></span>
 						    </div>
 						    <div>
 						    	<span><label>금액</label></span>
-						    	<span><input name="userEmail" type="text" class="textbox"></span>
+						    	<span><input name="price" type="text" class="textbox"></span>
 						    </div>
 						    <div>
 						     	<span><label>갯수</label></span>
-						    	<span><input name="userPhone" type="text" class="textbox"></span>
+						    	<span><input name="item_count" type="text" class="textbox"></span>
 						    </div>
 								<div>
 						     	<span><label>URL</label></span>
-						    	<span><input name="userPhone" type="text" class="textbox"></span>
+						    	<span><input name="item_url" type="text" class="textbox"></span>
+                  </div>
+                  <div>
+                    <span><label>Image</label></span>
+						    	<span><input name="image" type="text" class="textbox"></span>
 						    </div>
+
 								<div>
 						     	<span><label>주소 <span id="place_check_span" style="font-size:10px;"></span></label></span>
-						    	<span><input id="place_input" onchange="place_change(this.value)" name="place" type="text" class="textbox"></span>
-						    </div>
-								<div>
-						     	<span><label>기간</label></span>
-						    	<span><input name="userPhone" type="text" class="textbox"></span>
+						    	<span><input id="place_input" onchange="place_change(this.value)" name="address" type="text" class="textbox"></span>
 						    </div>
 								<script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
 								<span><label>내용</label></span>
-								<textarea name="editor1"></textarea>
+								<textarea name="content"></textarea>
         				<script>
-            		CKEDITOR.replace( 'editor1' );
+            		CKEDITOR.replace( 'content' );
         			</script>
 
 						   <div>
@@ -137,7 +138,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
 
-<script type="text/javascript" src="https://apis.daum.net/maps/maps3.js?apikey=c26ce78132fcbcbb9945deac0c684fed"></script>
+<script type="text/javascript" src="https://apis.daum.net/maps/maps3.js?apikey=799c201accc6d335ad64e9cb2989703c"></script>
 
 <script>
 var flag = 0;
@@ -151,9 +152,9 @@ var map = new daum.maps.Map(container, options); //지도 생성 및 객체 리�
 
 	$('#place_check').click(function(){
 		var place_value = $('#place_input').val();
-		url = "https://apis.daum.net/local/geo/addr2coord?apikey=c26ce78132fcbcbb9945deac0c684fed&q="+place_value+"&output=json";
+		url = "https://apis.daum.net/local/geo/addr2coord?apikey=799c201accc6d335ad64e9cb2989703c&q="+place_value+"&output=json";
 		console.log(url);
-		$.post("http://127.0.0.1:8282/",
+		$.post("http://10.10.55.188:8282/",
     {
         url: url
     },
