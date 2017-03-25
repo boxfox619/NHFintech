@@ -34,8 +34,12 @@ var params = 'begin='+items+'&count=10&category='+category;
       for( var i = 0; i < responseData.length; i += 1 ) {
         items++;
         var data = responseData[i];
-        if(data.title!=undefined){
-        var item = createItemHtml(data['title'], data['image'], data['category'], data['price'], 50, data['no']);
+          if(data.title!=undefined){
+              if(!data['per'])
+                  var per = 0;
+              else
+                  var per = data['per'];
+        var item = createItemHtml(data['title'], data['image'], data['category'], data['price'], per, data['no']);
         $('#portfoliolist').append(item);
         }
       }
