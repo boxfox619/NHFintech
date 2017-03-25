@@ -48,13 +48,13 @@ var params = 'begin='+items+'&count=10&category='+category;
 function getCart(){
   $.ajax({
   type: "POST",
-  url: 'http://sprout.kr/nh/ReadCart.php',
+  url: 'http://sprout.kr/nh/ReadHistory.php',
   success: function(responseData){
       for( var i = 0; i < responseData.length; i += 1 ) {
         items++;
         var data = responseData[i];
         if(data.title!=undefined){
-        var item = createItemHtml(data['title'], data['image'], data['category'], data['price'], 50, data['no']);
+        var item = createItemHtml(data['title'], data['image'], data['category'], data['pay']+'/'+data['price'], 50, data['no']);
         $('#portfoliolist').append(item);
         }
       }
