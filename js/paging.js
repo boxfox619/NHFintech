@@ -28,7 +28,7 @@ function seeMore(category){
 var params = 'begin='+items+'&count=10&category='+category;
   $.ajax({
   type: "POST",
-  url: '/ReadPost.php',
+      url: '/nh/ReadPost.php',
   data: params,
   success: function(responseData){
       for( var i = 0; i < responseData.length; i += 1 ) {
