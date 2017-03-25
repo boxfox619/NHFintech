@@ -95,7 +95,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
               </script>
             <!-- //search-scripts -->
 
-            <a href="cart.html"><i class="cart"></i></a>
+            <a href="cart.php"><i class="cart"></i></a>
           </div>
         <div class="navigation">
         <div>

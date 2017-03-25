@@ -1,3 +1,12 @@
+<?php
+session_start();
+if(!$_SESSION["id"])
+{
+    echo "<script>document.location.href=\"/nh/NHFintech/signin.html\"</script>";
+}
+
+?>
+
 <!--
 Author: W3layouts
 Author URL: http://w3layouts.com
@@ -59,7 +68,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							</script>
 						<!-- //search-scripts -->
 
-						<a href="cart.html"><i class="cart"></i></a>
+						<a href="cart.php"><i class="cart"></i></a>
 					</div>
 				<div class="navigation">
 				<div>
