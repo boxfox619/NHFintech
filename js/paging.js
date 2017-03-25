@@ -37,6 +37,8 @@ var params = 'begin='+items+'&count=10&category='+category;
           if(data.title!=undefined){
               if(!data['per'])
                   var per = 0;
+              else if(data['per']>100)
+                  var per = 100;
               else
                   var per = data['per'];
               if(data['title'].indexOf(filter) == -1)
