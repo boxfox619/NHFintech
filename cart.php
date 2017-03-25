@@ -187,7 +187,7 @@ function cancel(no, percent){
         $.ajax({
         type: "POST",
             url: '/nh/DeletePost.php',
-            data: 'post_pid='+no,
+            data: 'post_uid='+no,
             success: function(responseData){
                 location.reload();
     }
