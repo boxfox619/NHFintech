@@ -47,7 +47,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="search-box">
 							<div id="sb-search" class="sb-search">
 							<form>
-								<input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
+								<input class="sb-search-input" placeholder="항목 검색..." type="search" name="search" id="search">
 								<input class="sb-search-submit" type="submit" value="">
 								<span class="sb-icon-search"> </span>
 							</form>
@@ -108,13 +108,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						    	<span><input name="userPhone" type="text" class="textbox"></span>
 						    </div>
 								<div>
-						     	<span><label>주소 <span id="place_check_span" style="font-size:10px;"></span></label></span>
+						     	<span><label  style="display: inline-block; margin-right: 7px;">주소<span id="place_check_span" style="font-size:10px;"></span></label><a class="text-info" style="cursor: pointer" id="place_check" onclick="reloadMap();" style="display: inline-block;">주소 확인</a></span>
+
 						    	<span><input id="place_input" onchange="place_change(this.value)" name="place" type="text" class="textbox"></span>
 						    </div>
-								<div>
-						     	<span><label>기간</label></span>
-						    	<span><input name="userPhone" type="text" class="textbox"></span>
+								<div class="container">
+									<div class="coats text-center">
+						          <div id="map" style="width:100%;height:500px;"></div>
 						    </div>
+							</div>
 								<script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
 								<span><label>내용</label></span>
 								<textarea name="editor1"></textarea>
@@ -123,21 +125,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         			</script>
 
 						   <div>
-						   		<span><input id="contact_submit" onclick="searchBoard(this)" type="button" value="Submit Us"></span>
-						  </div>
+	 								<div>
+	 						     	<span style="display: inline-block;"><label>기간</label></span>
+	 						    	<span style="display: inline-block;"><input name="durationTime" type="date" class="textbox"></span>
+										<span style="display: inline-block; position: absolute; right: 0;"><input id="contact_submit" class="btn btn-success" onclick="searchBoard(this)" type="button" value="작성 완료"></span>
+									</div>
+						   		</div>
 					    </form>
 				    </div>
   				<div class="clearfix"></div>
 			  </div>
-				<div class="container" style="margin-top:30px;"><div class="coats sing-c text-center" style="margin-top:20px;">
-						<button type="button" id="place_check" name="button">주소 확인</button>
-		          <div id="map" style="width:100%;height:500px;"></div>
-		    </div>
-</div>
 
 
 
-<script type="text/javascript" src="https://apis.daum.net/maps/maps3.js?apikey=c26ce78132fcbcbb9945deac0c684fed"></script>
+<script type="text/javascript" src="https://apis.daum.net/maps/maps3.js?apikey=799c201accc6d335ad64e9cb2989703c"></script>
 
 <script>
 var flag = 0;
@@ -149,9 +150,9 @@ level: 3 //지도의 레벨(확대, 축소 정도)
 
 var map = new daum.maps.Map(container, options); //지도 생성 및 객체 리턴
 
-	$('#place_check').click(function(){
+	function reloadMap(){
 		var place_value = $('#place_input').val();
-		url = "https://apis.daum.net/local/geo/addr2coord?apikey=c26ce78132fcbcbb9945deac0c684fed&q="+place_value+"&output=json";
+		url = "https://apis.daum.net/local/geo/addr2coord?apikey=799c201accc6d335ad64e9cb2989703c&q="+place_value+"&output=json";
 		console.log(url);
 		$.post("http://127.0.0.1:8282/",
     {
@@ -174,7 +175,7 @@ var map = new daum.maps.Map(container, options); //지도 생성 및 객체 리�
 				$('#lat').val(lat);
 				$('#lng').val(lng);
     });
-	});
+	};
 
 	function displayMarker(locPosition, message) {
 
