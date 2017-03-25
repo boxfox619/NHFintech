@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <!--
 Author: W3layouts
 Author URL: http://w3layouts.com
@@ -59,7 +58,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</script>
 					<!-- //search-scripts -->
 
-					<a href="cart.php"><i class="cart"></i></a>
+					<a href="cart.html"><i class="cart"></i></a>
 				</div>
 			<div class="navigation">
 			<div>
@@ -70,16 +69,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<ul class="nav">
 
 					<li class="active"><a href="/nh/NHFintech">Home</a></li>
-							<li class="active"><a href="/nh/NHFintech">공동 구매</a></li>
+					<li class="active"><a href="/nh/NHFintech/info-bought.html">공구 안내</a></li>
+          <li class="active"><a href="/nh/NHFintech/contact.html">공구 등록</a></li>
           </ul>
 		</div>
 	 </div>
 			</div>
 		</div>
 	 </div>
-			</div>
-		</div>
-	</div>
 
 	<div class="content">
 		<div class="container">
@@ -118,7 +115,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
 	<script type="text/javascript">
 	$(function () {
-        seeMore('*',"<?php echo $_GET["search"]; ?>");
+		seeMore('*');
 	});
 	</script>
 				</div>

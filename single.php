@@ -50,7 +50,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
           source_image_height: 1000,
           show_hint: true,
           click_callback: function(image_anchor, instance_id){
-            alert('Callback example:\nYou clicked on an image with the anchor: "'+image_anchor+'"\n(in Etalage instance: "'+instance_id+'")');
+            
           }
         });
 
