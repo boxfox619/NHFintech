@@ -157,6 +157,7 @@ new UISearch( document.getElementById( 'sb-search' ) );
                 <input type="hidden" name="price" value="<?php echo $price/$item_count; ?>">
                 <input type="text" name="count" value="1" style="width: 3em;">
                 <a href="javascript:{}" onclick="document.getElementById('buy_form').submit();">buy now</a>
+                <a href="javascript:{}" onclick="$('chat-modal').show();">판매자 아이디</a>
 </form>
               </div>
             </div>
