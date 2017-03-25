@@ -48,4 +48,3 @@ function complete(no, percent){
     }
   }
 }
->>>>>>> 41a00da7c1ef6f408736fc79eb4b447745d35579
