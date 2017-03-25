@@ -27,6 +27,7 @@ function cancel(no, percent){
     data: 'post_pid='+no,
     success: function(responseData){
       location.reload();
+    }
     });
   }
 }
