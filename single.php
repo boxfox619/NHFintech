@@ -135,7 +135,7 @@ new UISearch( document.getElementById( 'sb-search' ) );
   <div class="women_main" style="margin-top:30px;">
     <div class="container">
       <div class="row single">
-        <div class="col-md-9 span-single">
+        <div class="col-md-12 span-single">
           <div class="single_left" style="position: relative;">
             <div class="grid images_3_of_2" style="display: inline-block;">
               <ul id="etalage">
@@ -151,9 +151,9 @@ new UISearch( document.getElementById( 'sb-search' ) );
             </div>
 
 
-            <div class="container" style="position:absolute; top:0px; right:0px;">
+            <div id="maps" style="float: right;">
               <div class="coats text-center">
-                <div id="map" style="width:23em;height:20em;"></div>
+                <div id="map" style="width:30em; height:20em;"></div>
               </div>
             </div>
 
