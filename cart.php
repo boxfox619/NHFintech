@@ -169,7 +169,7 @@ function loadNotifications(){
             for( var i = 0; i < responseData.length; i += 1 ) {
                 var data = responseData[i];
                 if(data.title!=undefined){
-                    var item = createNotification(data['title'], data['per'], data['no']);
+                    var item = createNotification(data['title'], data['per'], data['no'], data['price']);
                     $('#notifi-list').append(item);
           }
         }
@@ -177,9 +177,11 @@ function loadNotifications(){
     });
 }
 
-function createNotification(title, percent, no){
-  return '<span class="list-group-item">'+title+'<a style="position: absolute; right:10px; top: 3px;" onclick="cancel('+no+', '+percent+')" class="btn btn-warning">취소</a><a onclick="complete('+no+', '+percent+')" style="position: absolute; right: 65px; top: 3px;" class="btn btn-success">확정</a></span>';
-}
+function createNotification(title, percent, no, price){
+var data = '<span class="list-group-item">'+title+'<a style="position: absolute; right:10px; top: 3px;" onclick="cancel('+no+', '+percent+')" class="btn btn-warning">취소</a>';
+if (percent > 100){ data += '<form target="my_iframe' + no + '" action="http://10.10.3.25:8081/NH-KISA-OTA/hack/deposit.jsp" method="post" id="form' + no +'"><input type="hidden" name="FinAcno" value="00820111046281056121046122453"><input type="hidden" name="Tram" value="' + price + '"><input type="hidden" name="DractOtlt" value="test"><a onclick="complete('+no+', '+percent+')" style="position: absolute; right: 65px; top: 3px;" class="btn btn-success">확정</a></span></form><iframe name="my_iframe' + no + '" width="0" height="0"></iframe>';}
+return data;
+ }
 
 function cancel(no, percent){
     var result = confirm("정말로 삭제하시겠습니까?");
@@ -196,21 +198,7 @@ function cancel(no, percent){
 }
 
 function complete(no, percent){
-    if(percent<100){
-        alert('조건이 충족되지 않았습니다!');
-  }else{
-  var result = confirm("공동구매를 확정하시겠습니까??");
-    if(result){
-      $.ajax({
-      type: "POST",
-      url: '/nh/Confirm.php',
-      data: 'post_pid='+no,
-      success: function(responseData){
-        location.reload();
-      }
-    });
-  }
-}
+    $("#form" + no).submit();
 }
 
 $(function () {
