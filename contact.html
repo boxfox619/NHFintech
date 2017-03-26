@@ -151,7 +151,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 
 
-        <script type="text/javascript" src="https://apis.daum.net/maps/maps3.js?apikey=799c201accc6d335ad64e9cb2989703c"></script>
+        <script type="text/javascript" src="https://apis.daum.net/maps/maps3.js?apikey=559542baa77ce6bf92e6ff22daa358d7"></script>
 
         <script>
           var flag = 0;
@@ -165,7 +165,7 @@ var map = new daum.maps.Map(container, options); //지도 생성 및 객체 리�
 
 function reloadMap(){
   var place_value = $('#place_input').val();
-  url = "https://apis.daum.net/local/geo/addr2coord?apikey=799c201accc6d335ad64e9cb2989703c&q="+place_value+"&output=json";
+  url = "https://apis.daum.net/local/geo/addr2coord?apikey=559542baa77ce6bf92e6ff22daa358d7&q="+place_value+"&output=json";
   console.log(url);
   $.post("http://10.10.55.188:8282/",
     {

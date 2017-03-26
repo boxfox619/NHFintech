@@ -202,7 +202,7 @@ while($stmt2->fetch())
             </div>
           </div>
     </div></div></div>
-    <script type="text/javascript" src="https://apis.daum.net/maps/maps3.js?apikey=799c201accc6d335ad64e9cb2989703c"></script>
+    <script type="text/javascript" src="https://apis.daum.net/maps/maps3.js?apikey=559542baa77ce6bf92e6ff22daa358d7"></script>
     <script type="text/javascript">
     var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
     var options = { //php에서 렌더링하기로

@@ -43,7 +43,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </script>
   </head>
   <body>
-<<<<<<< HEAD
     <!-- header-section-starts -->
     <div class="header" id="home">
       <div class="top-header">
@@ -91,56 +90,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
           </div>
         </div>
       </div>
-=======
-
-      <!-- header-section-starts -->
-      <div class="header" id="home">
-          <div class="top-header">
-              <div class="container">
-              <div class="logo">
-                  <a href="/nh/NHFintech/">
-                      <img src="./images/logo_w_ver2.png" style="width:60px;">
-              </div>
-                  <div class="header-top-right">
-                  <!-- start search-->
-                      <div class="search-box">
-                          <div id="sb-search" class="sb-search">
-                              <form>
-                                  <input class="sb-search-input" placeholder="상품명 또는 지역 검색" type="search" name="search" id="search">
-                                  <input class="sb-search-submit" type="submit" value="">
-                                  <span class="sb-icon-search"> </span>
-                              </form>
-                          </div>
-                      </div>
-
-                      <!-- search-scripts -->
-                      <script src="js/classie.js"></script>
-                      <script src="js/uisearch.js"></script>
-    <script>
-    new UISearch( document.getElementById( 'sb-search' ) );
-    </script>
-                      <!-- //search-scripts -->
-
-                      <a href="cart.php"><i class="cart"></i></a>
-                  </div>
-              <div class="navigation">
-              <div>
-                <label class="mobile_menu" for="mobile_menu">
-                <span>Menu</span>
-                </label>
-                <input id="mobile_menu" type="checkbox">
-                  <ul class="nav">
-                      <li class="active"><a href="/nh/NHFintech">Home</a></li>
-                      <li class="active"><a href="/nh/NHFintech/map.php">공구 지도</a></li>
-                      <li class="active"><a href="/nh/NHFintech/contact.html">공구 등록</a></li>
-            </ul>
-          </div>
-       </div>
-              </div>
-          </div>
-       </div>
->>>>>>> 8b3a1e194f780b5ae7a181d6fe8fa4161c7cccf5
-
   <div class="container"><div class="coats sing-c text-center" style="margin-top:50px;">
       <span><label style="display: inline-block; margin-right: 7px;">주소</span>
       <span><input id="place_input" onchange="place_change(this.value)" name="address" type="text" class="textbox"></span>

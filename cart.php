@@ -110,8 +110,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <div style="padding-left: 15px;">
                     <div><label>아이디 : </label><span>id</span></div>
                     <div><label>이름 : </label><span>김성래</span></div>
-                    <div><label>전화번호 : </label><span>김성래</span></div>
-                    <div><label>계좌번호 : </label><span>김성래</span></div>
+                    <div><label>전화번호 : </label><span>010-8195-8301</span></div>
+                    <div><label>계좌번호 : </label><span>595-910110-28407</span></div>
                 </div>
                          </div>
                             <div class="col-lg-6 col-md-12">
