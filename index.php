@@ -30,53 +30,52 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <!-- header-section-starts -->
-    <div class="header" id="home">
-        <div class="top-header">
-            <div class="container">
-            <div class="logo">
-                <a href="/nh/NHFintech/">
-                    <img src="./images/logo_w_ver2.png" style="width:60px;">
-            </div>
-                <div class="header-top-right">
-                <!-- start search-->
-                    <div class="search-box">
-                        <div id="sb-search" class="sb-search">
-                            <form>
-                                <input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
-                                <input class="sb-search-submit" type="submit" value="">
-                                <span class="sb-icon-search"> </span>
-                            </form>
-                        </div>
-                    </div>
+  <!-- header-section-starts -->
+  <div class="header" id="home">
+      <div class="top-header">
+          <div class="container">
+          <div class="logo">
+              <a href="/nh/NHFintech/">
+                  <img src="./images/logo_w_ver2.png" style="width:60px;">
+          </div>
+              <div class="header-top-right">
+              <!-- start search-->
+                  <div class="search-box">
+                      <div id="sb-search" class="sb-search">
+                          <form>
+                              <input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
+                              <input class="sb-search-submit" type="submit" value="">
+                              <span class="sb-icon-search"> </span>
+                          </form>
+                      </div>
+                  </div>
 
-                    <!-- search-scripts -->
-                    <script src="js/classie.js"></script>
-                    <script src="js/uisearch.js"></script>
+                  <!-- search-scripts -->
+                  <script src="js/classie.js"></script>
+                  <script src="js/uisearch.js"></script>
 <script>
 new UISearch( document.getElementById( 'sb-search' ) );
 </script>
-                    <!-- //search-scripts -->
+                  <!-- //search-scripts -->
 
-                    <a href="cart.php"><i class="cart"></i></a>
-                </div>
-            <div class="navigation">
-            <div>
-              <label class="mobile_menu" for="mobile_menu">
-              <span>Menu</span>
-              </label>
-              <input id="mobile_menu" type="checkbox">
-                <ul class="nav">
-
-                    <li class="active"><a href="/nh/NHFintech">Home</a></li>
-                    <li class="active"><a href="/nh/NHFintech/info-bought.html">공구 안내</a></li>
-          <li class="active"><a href="/nh/NHFintech/contact.html">공구 등록</a></li>
-          </ul>
-        </div>
-     </div>
-            </div>
-        </div>
-     </div>
+                  <a href="cart.php"><i class="cart"></i></a>
+              </div>
+          <div class="navigation">
+          <div>
+            <label class="mobile_menu" for="mobile_menu">
+            <span>Menu</span>
+            </label>
+            <input id="mobile_menu" type="checkbox">
+              <ul class="nav">
+                  <li class="active"><a href="/nh/NHFintech">Home</a></li>
+                  <li class="active"><a href="/nh/NHFintech/info-bought.html">공구 지도</a></li>
+                  <li class="active"><a href="/nh/NHFintech/map.phpl">공구 등록</a></li>
+        </ul>
+      </div>
+   </div>
+          </div>
+      </div>
+   </div>
 
     <div class="content">
         <div class="container">

@@ -119,17 +119,15 @@ new UISearch( document.getElementById( 'sb-search' ) );
               </label>
               <input id="mobile_menu" type="checkbox">
                 <ul class="nav">
-
                     <li class="active"><a href="/nh/NHFintech">Home</a></li>
-                    <li class="active"><a href="/nh/NHFintech/info-bought.html">공구 안내</a></li>
-          <li class="active"><a href="/nh/NHFintech/contact.html">공구 등록</a></li>
+                    <li class="active"><a href="/nh/NHFintech/info-bought.html">공구 지도</a></li>
+                    <li class="active"><a href="/nh/NHFintech/map.phpl">공구 등록</a></li>
           </ul>
         </div>
      </div>
             </div>
         </div>
      </div>
-  <!-- start-single-page -->
   <!-- content -->
   <!-- start content -->
   <div class="women_main" style="margin-top:30px;">
