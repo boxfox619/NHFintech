@@ -122,7 +122,7 @@ jQuery(document).ready(function($) {
                   <ul class="nav">
                       <li class="active"><a href="/nh/NHFintech">Home</a></li>
                       <li class="active"><a href="/nh/NHFintech/map.php">공구 지도</a></li>
-                      <li class="active"><a href="/nh/NHFintech/map.phpl">공구 등록</a></li>
+                      <li class="active"><a href="/nh/NHFintech/contact.html">공구 등록</a></li>
             </ul>
           </div>
        </div>
