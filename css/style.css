@@ -3402,6 +3402,12 @@ h3.c-head{
 	}
 }
 
+.submit-box{
+	position:absolute;
+	bottom:0px;
+	right:0px;
+}
+
 @media screen and (max-width: 800px) {
 
 		#maps, #map{
@@ -3720,6 +3726,9 @@ h3.c-head{
 	}
 }
 @media screen and (max-width: 768px) {
+.submit-box{
+	position: relative;
+}
 	.contact-form-main {
 		width: 35%;
 	}
