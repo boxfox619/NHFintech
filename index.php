@@ -43,7 +43,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                   <div class="search-box">
                       <div id="sb-search" class="sb-search">
                           <form>
-                              <input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
+                              <input class="sb-search-input" placeholder="상품명 또는 지역 검색" type="search" name="search" id="search">
                               <input class="sb-search-submit" type="submit" value="">
                               <span class="sb-icon-search"> </span>
                           </form>
@@ -68,8 +68,8 @@ new UISearch( document.getElementById( 'sb-search' ) );
             <input id="mobile_menu" type="checkbox">
               <ul class="nav">
                   <li class="active"><a href="/nh/NHFintech">Home</a></li>
-                  <li class="active"><a href="/nh/NHFintech/info-bought.html">공구 지도</a></li>
-                  <li class="active"><a href="/nh/NHFintech/map.phpl">공구 등록</a></li>
+                  <li class="active"><a href="/nh/NHFintech/map.php">공구 지도</a></li>
+                  <li class="active"><a href="/nh/NHFintech/contact.html">공구 등록</a></li>
         </ul>
       </div>
    </div>

@@ -82,52 +82,53 @@ jQuery(document).ready(function($) {
 
   </head>
   <body>
-    <!-- header-section-starts -->
-    <div class="header" id="home">
-        <div class="top-header">
-            <div class="container">
-            <div class="logo">
-                <a href="/nh/NHFintech/">
-                    <img src="./images/logo_w_ver2.png" style="width:60px;">
-            </div>
-                <div class="header-top-right">
-                <!-- start search-->
-                    <div class="search-box">
-                        <div id="sb-search" class="sb-search">
-                            <form>
-                                <input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
-                                <input class="sb-search-submit" type="submit" value="">
-                                <span class="sb-icon-search"> </span>
-                            </form>
-                        </div>
-                    </div>
 
-                    <!-- search-scripts -->
-                    <script src="js/classie.js"></script>
-                    <script src="js/uisearch.js"></script>
-<script>
-new UISearch( document.getElementById( 'sb-search' ) );
-</script>
-                    <!-- //search-scripts -->
+      <!-- header-section-starts -->
+      <div class="header" id="home">
+          <div class="top-header">
+              <div class="container">
+              <div class="logo">
+                  <a href="/nh/NHFintech/">
+                      <img src="./images/logo_w_ver2.png" style="width:60px;">
+              </div>
+                  <div class="header-top-right">
+                  <!-- start search-->
+                      <div class="search-box">
+                          <div id="sb-search" class="sb-search">
+                              <form>
+                                  <input class="sb-search-input" placeholder="상품명 또는 지역 검색" type="search" name="search" id="search">
+                                  <input class="sb-search-submit" type="submit" value="">
+                                  <span class="sb-icon-search"> </span>
+                              </form>
+                          </div>
+                      </div>
 
-                    <a href="cart.php"><i class="cart"></i></a>
-                </div>
-            <div class="navigation">
-            <div>
-              <label class="mobile_menu" for="mobile_menu">
-              <span>Menu</span>
-              </label>
-              <input id="mobile_menu" type="checkbox">
-                <ul class="nav">
-                    <li class="active"><a href="/nh/NHFintech">Home</a></li>
-                    <li class="active"><a href="/nh/NHFintech/info-bought.html">공구 지도</a></li>
-                    <li class="active"><a href="/nh/NHFintech/map.phpl">공구 등록</a></li>
-          </ul>
-        </div>
-     </div>
-            </div>
-        </div>
-     </div>
+                      <!-- search-scripts -->
+                      <script src="js/classie.js"></script>
+                      <script src="js/uisearch.js"></script>
+    <script>
+    new UISearch( document.getElementById( 'sb-search' ) );
+    </script>
+                      <!-- //search-scripts -->
+
+                      <a href="cart.php"><i class="cart"></i></a>
+                  </div>
+              <div class="navigation">
+              <div>
+                <label class="mobile_menu" for="mobile_menu">
+                <span>Menu</span>
+                </label>
+                <input id="mobile_menu" type="checkbox">
+                  <ul class="nav">
+                      <li class="active"><a href="/nh/NHFintech">Home</a></li>
+                      <li class="active"><a href="/nh/NHFintech/map.php">공구 지도</a></li>
+                      <li class="active"><a href="/nh/NHFintech/contact.html">공구 등록</a></li>
+            </ul>
+          </div>
+       </div>
+              </div>
+          </div>
+       </div>
   <!-- content -->
   <!-- start content -->
   <div class="women_main" style="margin-top:30px;">
@@ -155,7 +156,7 @@ new UISearch( document.getElementById( 'sb-search' ) );
               </div>
             </div>
 
-            <div class="desc1 span_3_of_2"; style="position:absolute; bottom:0px; right:0px;">
+            <div class="desc1 span_3_of_2 submit-box">
             <h3><?php echo $title; ?></h3>
             <p>$ <?php echo $price; ?> <a>/<?php echo $item_count; ?></a></p>
               <div class="btn_form">
@@ -164,8 +165,7 @@ new UISearch( document.getElementById( 'sb-search' ) );
                 <input type="hidden" name="price" value="<?php echo $price/$item_count; ?>">
                 <input type="text" name="count" value="1" style="width: 3em;">
                 <a href="javascript:{}" onclick="document.getElementById('buy_form').submit();">buy now</a>
-                <a id="writer-id" href="javascript:{}" onclick="$('chat-modal').show();">문의하기</a>
-</form>
+              </form>
               </div>
             </div>
             <div class="clearfix"></div>
