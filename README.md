@@ -1,8 +1,12 @@
 # NHFintech Hackathon Challenge
-https://github.com/JunYeongJang
-https://github.com/ehddgks0627
+KISA NH Fintech Hackathon award of Excellence <br />
 
-#Images
+ <br />
+whit developer  <br />
+https://github.com/JunYeongJang <br />
+https://github.com/ehddgks0627 <br />
+
+# Images
 ![alt tag](http://cfile27.uf.tistory.com/image/23365E5058D9A8172D3DA7)
 ![alt tag](http://cfile1.uf.tistory.com/image/241F275058D9A81B3549A0)
 ![alt tag](http://cfile9.uf.tistory.com/image/236E095058D9A81806BF58)
